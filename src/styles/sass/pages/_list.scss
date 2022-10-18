@@ -1,0 +1,17 @@
+.listContainer {
+  display: flex;
+  justify-content: center;
+  .listWrapper {
+    width: 100%;
+    max-width: $desktop;
+    margin: 0.5rem 10%;
+    display: flex;
+    gap: 1rem;
+    .results {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 0.5rem;
+    }
+  }
+}

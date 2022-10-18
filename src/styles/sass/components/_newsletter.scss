@@ -1,0 +1,42 @@
+.newsletter {
+  background-color: $primary-darker;
+  width: 100%;
+  color: $white-color;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .newsletterTitle {
+    font-weight: 300;
+    font-size: 1.5rem;
+  }
+  .newsletterSubtitle {
+    font-weight: 300;
+    font-size: 1rem;
+    color: $gray-color;
+  }
+  .subscribeContainer {
+    margin-top: 1rem;
+
+    :nth-child(-n + 2) {
+      font-family: $primary-ff;
+      border-radius: 3px;
+      padding: 15px;
+      font-size: 1rem;
+      border: none;
+    }
+    input {
+      font-weight: 300;
+      margin-right: 4px;
+    }
+    button {
+      background-color: $secondary-color;
+      font-weight: 100;
+      color: $white-color;
+      cursor: pointer;
+    }
+    .confirmation {
+      margin-top: 0.625rem;
+    }
+  }
+}

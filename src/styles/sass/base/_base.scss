@@ -1,0 +1,36 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: $primary-ff, $secondar-ff;
+  text-rendering: optimizeSpeed;
+  /* Make images easier to work with */
+  img,
+  picture {
+    max-width: 100%;
+    display: block;
+  }
+  /* Inherit fonts for inputs and buttons */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+  a {
+    color: $white_color;
+    text-decoration: none;
+  }
+  ul,
+  ol {
+    list-style: none;
+  }
+}

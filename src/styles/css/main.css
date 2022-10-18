@@ -1,0 +1,768 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  text-rendering: optimizeSpeed;
+  /* Make images easier to work with */
+  /* Inherit fonts for inputs and buttons */
+}
+body img,
+body picture {
+  max-width: 100%;
+  display: block;
+}
+body input,
+body button,
+body textarea,
+body select {
+  font: inherit;
+}
+body a {
+  color: #f8f9fa;
+  text-decoration: none;
+}
+body ul,
+body ol {
+  list-style: none;
+}
+
+.homeContainer {
+  margin: 50px 10%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.875rem;
+}
+.homeContainer .homeTitle {
+  width: 100%;
+  max-width: 1200px;
+  font-size: 1.25rem;
+}
+
+.listContainer {
+  display: flex;
+  justify-content: center;
+}
+.listContainer .listWrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0.5rem 10%;
+  display: flex;
+  gap: 1rem;
+}
+.listContainer .listWrapper .results {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.hotelContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10%;
+}
+.hotelContainer .hotelWrapper {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  padding: 1.2rem 0;
+}
+.hotelContainer .hotelWrapper .bookNow {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  border: none;
+  padding: 10px 20px;
+  background-color: #0071c2;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+@media (min-width: 800px) {
+  .hotelContainer .hotelWrapper .bookNow {
+    display: block;
+  }
+}
+.hotelContainer .hotelWrapper .hotelTitle {
+  font-size: 24px;
+}
+.hotelContainer .hotelWrapper .hotelAddress {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hotelContainer .hotelWrapper .hotelDistance {
+  color: #0071c2;
+  font-weight: 500;
+}
+.hotelContainer .hotelWrapper .hotelPriceHighlight {
+  color: #008009;
+  font-weight: 500;
+}
+.hotelContainer .hotelWrapper .hotelImages {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.hotelContainer .hotelWrapper .hotelImages .hotelImgWrapper {
+  flex: 1;
+  min-width: 250px;
+  max-width: 33%;
+}
+.hotelContainer .hotelWrapper .hotelImages .hotelImgWrapper .hotelImg {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+.hotelContainer .hotelWrapper .hotelDetails {
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+@media (min-width: 800px) {
+  .hotelContainer .hotelWrapper .hotelDetails {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+}
+.hotelContainer .hotelWrapper .hotelDetails .hotelDetailsTexts {
+  flex: 3;
+}
+.hotelContainer .hotelWrapper .hotelDetails .hotelDetailsTexts .hotelDesc {
+  font-size: 14px;
+  margin-top: 20px;
+  text-align: justify;
+}
+.hotelContainer .hotelWrapper .hotelDetails .hotelDetailsPrice {
+  flex: 1;
+  background-color: #ebf3ff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.hotelContainer .hotelWrapper .hotelDetails .hotelDetailsPrice h1 {
+  font-size: 18px;
+  color: #555;
+}
+.hotelContainer .hotelWrapper .hotelDetails .hotelDetailsPrice span {
+  font-size: 14px;
+  text-align: justify;
+}
+.hotelContainer .hotelWrapper .hotelDetails .hotelDetailsPrice h2 {
+  font-weight: 300;
+}
+.hotelContainer .hotelWrapper .hotelDetails .hotelDetailsPrice button {
+  border: none;
+  padding: 10px 20px;
+  background-color: #0071c2;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.navbar {
+  background-color: #003580;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 10% 0;
+}
+.navbar .navContainer {
+  width: 100vw;
+  max-width: 1200px;
+  color: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar .navContainer .logo {
+  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.navbar .navItems .navButton {
+  background-color: #f8f9fa;
+  color: #0071c2;
+  border: none;
+  margin-left: 0.875rem;
+  padding: 0.3rem 0.625rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.header {
+  background-color: #003580;
+  color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding: 0 10%;
+}
+.header .headerContainer {
+  width: 100vw;
+  max-width: 1200px;
+  margin: 0.625rem 0;
+}
+.header .headerContainer .headerList {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2rem 0 2.5rem;
+}
+@media (min-width: 960px) {
+  .header .headerContainer .headerList {
+    flex-direction: row;
+    justify-content: start;
+    padding: 0;
+    gap: 2.5rem;
+  }
+}
+.header .headerContainer .headerList .headerListItem {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+.header .headerContainer .headerList .headerListItem.active {
+  border: 1px solid #f8f9fa;
+  padding: 0.625rem;
+  border-radius: 1.25rem;
+}
+.header .headerContainer .headerText {
+  margin: 2rem 0 8.5rem;
+}
+@media (min-width: 960px) {
+  .header .headerContainer .headerText {
+    margin: 4rem 0 4.5rem;
+  }
+}
+.header .headerContainer .headerText .headerTitle {
+  font-weight: 700;
+  font-size: 2rem;
+}
+@media (min-width: 960px) {
+  .header .headerContainer .headerText .headerTitle {
+    font-size: 4rem;
+  }
+}
+.header .headerContainer .headerText .headerDesc {
+  margin: 0.625rem 0;
+  font-size: 1.5rem;
+}
+.header .headerContainer .headerBtn {
+  background-color: #0071c2;
+  color: white;
+  font-weight: 500;
+  border: none;
+  padding: 0.625rem;
+  cursor: pointer;
+}
+.header .headerContainer .headerSearch {
+  padding: 0.625rem 0;
+  border-radius: 5px;
+  border: 3px solid #febb02;
+  background-color: #f8f9fa;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: -25px;
+  width: 80%;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+@media (min-width: 960px) {
+  .header .headerContainer .headerSearch {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+.header .headerContainer .headerSearch .headerIcon {
+  color: #bdbdbd;
+}
+.header .headerContainer .headerSearch .headerSearchItem {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+.header .headerContainer .headerSearch .headerSearchItem .headerSearchInput {
+  border: none;
+  outline: none;
+  background-color: #f8f9fa;
+}
+.header .headerContainer .headerSearch .headerSearchItem .headerSearchText {
+  color: #333;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.header .headerContainer .headerSearch .headerSearchItem .date {
+  position: absolute;
+  z-index: 2;
+  top: 55px;
+  transform: translateX(-50%);
+  left: 50%;
+}
+.header .headerContainer .options {
+  z-index: 2;
+  position: absolute;
+  top: 90px;
+  width: 250px;
+  background-color: white;
+  color: gray;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+}
+@media (min-width: 960px) {
+  .header .headerContainer .options {
+    top: 55px;
+  }
+}
+.header .headerContainer .options .optionItem {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.625rem;
+}
+.header .headerContainer .options .optionItem:nth-child(-n+2) {
+  padding-bottom: 0.625rem;
+  border-bottom: 1px solid #bdbdbd;
+}
+.header .headerContainer .options .optionItem .optionCounter {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 12px;
+  color: black;
+}
+.header .headerContainer .options .optionItem .optionCounterNumber {
+  padding: 0 12px;
+}
+.header .headerContainer .options .optionItem .optionCounterBtn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #0071c2;
+  color: #0071c2;
+  cursor: pointer;
+  background-color: white;
+}
+.header .headerContainer .options .optionItem .optionCounterBtn:disabled {
+  cursor: not-allowed;
+}
+
+.featured {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.25rem;
+  flex-direction: column;
+  max-width: 360px;
+}
+@media (min-width: 960px) {
+  .featured {
+    max-width: 1200px;
+    flex-direction: row;
+  }
+  .featured .featuredItem {
+    flex: 1;
+  }
+}
+.featured .featuredItem {
+  position: relative;
+  color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 250px;
+  cursor: pointer;
+}
+.featured .featuredItem .featuredImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.featured .featuredItem .featuredTitles {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+}
+.featured .featuredItem .featuredTitles:hover {
+  box-shadow: inset 1px -107px 66px -46px rgba(0, 0, 0, 0.3);
+}
+
+.propertyList {
+  width: 100%;
+  max-width: 1200px;
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.propertyListItem {
+  flex-grow: 1;
+  flex-basis: 130px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.propertyListImg {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.propertyListTitles > h1 {
+  font-size: 1rem;
+  color: #444;
+}
+
+.propertyListTitles > h2 {
+  font-size: 0.875rem;
+  font-weight: 300;
+}
+
+.featuredProperty {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.25rem;
+  flex-direction: column;
+  max-width: 360px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+@media (min-width: 960px) {
+  .featuredProperty {
+    max-width: 1200px;
+    flex-direction: row;
+  }
+  .featuredProperty .featuredItem {
+    flex: 1;
+  }
+}
+.featuredProperty .featuredPropertyItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  max-width: 350px;
+}
+.featuredProperty .featuredPropertyItem img {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  object-fit: cover;
+}
+.featuredProperty .featuredPropertyItem .featuredPropertyName {
+  font-weight: bold;
+}
+.featuredProperty .featuredPropertyItem .featuredPropertyCity {
+  font-weight: 300;
+}
+.featuredProperty .featuredPropertyItem .featuredPropertyPrice {
+  font-weight: 500;
+}
+.featuredProperty .featuredPropertyItem .featuredPropertyRating button {
+  background-color: #003580;
+  color: #f8f9fa;
+  border: none;
+  margin-right: 0.625rem;
+  padding: 6px;
+  font-weight: bold;
+  line-height: 20px;
+  border-radius: 5px 5px 5px 0px;
+}
+.featuredProperty .featuredPropertyItem .featuredPropertyRating button span {
+  font-size: 0.875rem;
+}
+
+.newsletter {
+  background-color: #00224f;
+  width: 100%;
+  color: #f8f9fa;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.newsletter .newsletterTitle {
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+.newsletter .newsletterSubtitle {
+  font-weight: 300;
+  font-size: 1rem;
+  color: #bdbdbd;
+}
+.newsletter .subscribeContainer {
+  margin-top: 1rem;
+}
+.newsletter .subscribeContainer :nth-child(-n+2) {
+  font-family: "Open Sans";
+  border-radius: 3px;
+  padding: 15px;
+  font-size: 1rem;
+  border: none;
+}
+.newsletter .subscribeContainer input {
+  font-weight: 300;
+  margin-right: 4px;
+}
+.newsletter .subscribeContainer button {
+  background-color: #0071c2;
+  font-weight: 100;
+  color: #f8f9fa;
+  cursor: pointer;
+}
+.newsletter .subscribeContainer .confirmation {
+  margin-top: 0.625rem;
+}
+
+.footer {
+  margin: 0 10%;
+}
+.footer .footerContainer {
+  display: flex;
+  flex-direction: columns;
+  flex-wrap: wrap;
+}
+.footer .footerList {
+  flex: 1;
+  align-content: space-between;
+  margin-right: 0.9rem;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+}
+.footer .footerList .footerListItem {
+  margin-top: 0.5rem;
+}
+.footer .footerText {
+  text-align: center;
+  font-size: 0.625rem;
+}
+
+.listSearch {
+  position: relative;
+  background-color: #febb02;
+  border-radius: 5px;
+  flex: 1;
+  padding: 0.875rem;
+  width: 100%;
+  color: #333;
+  position: sticky;
+  height: max-content;
+  min-width: 235px;
+}
+@media (max-width: 960px) {
+  .listSearch {
+    display: none;
+  }
+}
+.listSearch .listSearchTitle {
+  font-size: 1.2rem;
+}
+.listSearch .listItem {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 0.625rem;
+}
+.listSearch .listItem > input {
+  padding: 5px;
+  border: none;
+  color: #333;
+}
+.listSearch .listItem .listSearchText {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.listSearch .listItem .searchDestination {
+  padding: 5px;
+  background-color: white;
+  color: #333;
+}
+.listSearch .listItem .listFilters {
+  width: 100%;
+}
+.listSearch .listItem .listFilters .listFilterItem {
+  font-size: 0.75rem;
+  margin: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+}
+.listSearch .listItem .listFilters .listFilterItem input {
+  width: 30%;
+  text-align: center;
+  padding: 2px;
+}
+.listSearch .listItem .date {
+  position: absolute;
+  z-index: 2;
+  top: 170px;
+  left: 0;
+}
+.listSearch button {
+  padding: 0.625rem;
+  background-color: #0071c2;
+  color: #f8f9fa;
+  width: 100%;
+  border: none;
+  font-weight: 500;
+}
+
+.listResult {
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+.listResult .searchItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.listResult .searchItem .searchItemImg {
+  width: 200px;
+  height: 200px;
+}
+.listResult .searchItemDesc {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  gap: 0.5rem;
+}
+.listResult .searchItemDesc .searchItemTitle {
+  color: #0071c2;
+  font-size: 1.5rem;
+}
+.listResult .searchItemDesc .searchItemTaxiOp {
+  color: #f8f9fa;
+  background-color: #008009;
+  max-width: fit-content;
+  border-radius: 5px;
+  padding: 0 5px;
+}
+.listResult .searchItemDesc .searchItemSubtitle {
+  font-weight: bold;
+}
+.listResult .searchItemDesc .searchItemCancelOp {
+  color: #008009;
+  font-weight: bold;
+}
+.listResult .searchItemDesc .searchItemCancelOpSubtitle {
+  color: #008009;
+}
+.listResult .searchItemDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.listResult .searchItemDetails .searchItemRating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.listResult .searchItemDetails .searchItemRating span {
+  font-weight: 600;
+}
+.listResult .searchItemDetails .searchItemRating button {
+  background-color: #003580;
+  color: #f8f9fa;
+  border: none;
+  margin-right: 0.625rem;
+  padding: 6px;
+  font-weight: bold;
+  line-height: 20px;
+  border-radius: 5px 5px 5px 0px;
+}
+.listResult .searchItemDetails .searchItemRating button span {
+  font-size: 0.875rem;
+}
+.listResult .searchItemDetails .searchItemDetailTexts {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  gap: 0.3rem;
+}
+.listResult .searchItemDetails .searchItemDetailTexts .searchItemPrice {
+  font-size: 1.5rem;
+}
+.listResult .searchItemDetails .searchItemDetailTexts .searchItemTaxOp {
+  color: #bdbdbd;
+}
+.listResult .searchItemDetails .searchItemDetailTexts button {
+  padding: 0.625rem;
+  background-color: #0071c2;
+  color: #f8f9fa;
+  width: 100%;
+  border: none;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+.slider {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.613);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+}
+.slider .sliderWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider .sliderWrapper .sliderImg {
+  width: 80%;
+}
+.slider .close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: lightgray;
+  cursor: pointer;
+}
+.slider .arrow {
+  margin: 20px;
+  font-size: 45px;
+  color: lightgray;
+  cursor: pointer;
+}/*# sourceMappingURL=main.css.map */

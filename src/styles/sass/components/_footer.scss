@@ -1,0 +1,26 @@
+.footer {
+  margin: 0 10%;
+  .footerContainer {
+    // color: $secondary-color;
+    display: flex;
+    flex-direction: columns;
+    flex-wrap: wrap;
+  }
+  //ul
+  .footerList {
+    // border: 2px solid orange;
+    // list-style: none;
+    flex: 1;
+    align-content: space-between;
+    margin-right: 0.9rem;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    .footerListItem {
+      margin-top: 0.5rem;
+    }
+  }
+  .footerText {
+    text-align: center;
+    font-size: 0.625rem;
+  }
+}

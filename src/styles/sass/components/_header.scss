@@ -1,0 +1,164 @@
+.header {
+  background-color: $primary-color;
+  color: $white-color;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding: 0 10%;
+  .headerContainer {
+    width: 100vw;
+    // width: 100%;
+    max-width: $desktop;
+    margin: 0.625rem 0;
+    @media (min-width: $tablet) {
+      // padding: 0;
+    }
+    .headerList {
+      display: flex;
+      gap: 0.5rem;
+      flex-direction: column;
+      justify-content: center;
+      margin: 2rem 0 2.5rem;
+      @media (min-width: $tablet) {
+        flex-direction: row;
+        justify-content: start;
+        padding: 0;
+        gap: 2.5rem;
+      }
+      .headerListItem {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.625rem;
+
+        &.active {
+          border: 1px solid $white-color;
+          padding: 0.625rem;
+          border-radius: 1.25rem;
+        }
+      }
+    }
+    .headerText {
+      margin: 2rem 0 8.5rem;
+      @media (min-width: $tablet) {
+        margin: 4rem 0 4.5rem;
+      }
+      .headerTitle {
+        font-weight: 700;
+        font-size: 2rem;
+        @media (min-width: $tablet) {
+          font-size: 4rem;
+        }
+      }
+      .headerDesc {
+        margin: 0.625rem 0;
+        font-size: 1.5rem;
+      }
+    }
+    .headerBtn {
+      background-color: $secondary-color;
+      color: white;
+      font-weight: 500;
+      border: none;
+      padding: 0.625rem;
+      cursor: pointer;
+    }
+
+    .headerSearch {
+      padding: 0.625rem 0;
+      border-radius: 5px;
+      border: 3px solid $details-color;
+      background-color: $white-color;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      bottom: -25px;
+      width: (80%);
+      max-width: $desktop;
+      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 0.625rem;
+
+      @media (min-width: $tablet) {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+      .headerIcon {
+        color: $gray-color;
+      }
+      .headerSearchItem {
+        display: flex;
+        align-items: center;
+        gap: 0.625rem;
+
+        .headerSearchInput {
+          border: none;
+          outline: none;
+          background-color: $white-color;
+        }
+
+        .headerSearchText {
+          color: $text-color;
+          font-size: 0.9rem;
+          cursor: pointer;
+        }
+
+        .date {
+          position: absolute;
+          z-index: 2;
+          top: 55px;
+          transform: translateX(-50%);
+          left: 50%;
+          @media (min-width: $tablet) {
+          }
+        }
+      }
+    }
+
+    .options {
+      z-index: 2;
+      position: absolute;
+      top: 90px;
+      width: 250px;
+      background-color: white;
+      color: gray;
+      border-radius: 5px;
+      -webkit-box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+      box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+      @media (min-width: $tablet) {
+        top: 55px;
+      }
+      .optionItem {
+        display: flex;
+        justify-content: space-between;
+        margin: 0.625rem;
+        &:nth-child(-n + 2) {
+          padding-bottom: 0.625rem;
+          border-bottom: 1px solid $gray-color;
+        }
+        .optionCounter {
+          display: flex;
+          align-items: center;
+          gap: 0.625rem;
+          font-size: 12px;
+          color: black;
+        }
+        .optionCounterNumber {
+          padding: 0 12px;
+        }
+        .optionCounterBtn {
+          width: 30px;
+          height: 30px;
+          border: 1px solid #0071c2;
+          color: #0071c2;
+          cursor: pointer;
+          background-color: white;
+
+          &:disabled {
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+  }
+}
