@@ -7,6 +7,9 @@
     margin: 0.5rem 10%;
     display: flex;
     gap: 1rem;
+    @media (max-width: $tablet) {
+      flex-wrap: wrap;
+    }
     .results {
       display: flex;
       flex-direction: column;

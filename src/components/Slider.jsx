@@ -5,7 +5,7 @@ import {
   faCircleXmark,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Slider = ({ photos, setOpen, slideNumber, setSlideNumber }) => {
+const Slider = ({ photos, setOpenSlider, slideNumber, setSlideNumber }) => {
   const handleMoveSlider = (direction) => {
     let newSlideNumber;
     if (direction === "left") {
@@ -16,7 +16,7 @@ const Slider = ({ photos, setOpen, slideNumber, setSlideNumber }) => {
     setSlideNumber(newSlideNumber);
   };
   const closeSlider = () => {
-    setOpen(false);
+    setOpenSlider(false);
   };
   return (
     <div className="slider">
@@ -31,7 +31,7 @@ const Slider = ({ photos, setOpen, slideNumber, setSlideNumber }) => {
         onClick={() => handleMoveSlider("left")}
       />
       <div className="sliderWrapper">
-        <img src={photos[slideNumber].src} alt="" className="sliderImg" />
+        <img src={photos[slideNumber]} alt="" className="sliderImg" />
       </div>
       <FontAwesomeIcon
         icon={faCircleArrowRight}

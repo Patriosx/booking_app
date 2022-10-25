@@ -10,7 +10,7 @@
   height: max-content;
   min-width: 235px;
   @media (max-width: $tablet) {
-    display: none;
+    // display: none;
   }
 
   .listSearchTitle {
@@ -23,20 +23,32 @@
     gap: 5px;
     margin-bottom: 0.625rem;
 
-    & > input {
-      padding: 5px;
-      border: none;
-      color: $text-color;
-    }
     //destination
     .listSearchText {
       font-size: 0.875rem;
       font-weight: 500;
     }
-    .searchDestination {
+    .destinationContainer {
+      background-color: white;
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      & > input {
+        border: none;
+        color: $text-color;
+        width: 100%;
+        margin-left: 0.4rem;
+      }
+    }
+    //date
+    .dateContainer {
       padding: 5px;
       background-color: white;
       color: $text-color;
+      .searchDestination {
+        font-size: 0.9rem;
+        margin-left: 0.4rem;
+      }
     }
     .listFilters {
       width: 100%;
@@ -52,15 +64,8 @@
         }
       }
     }
-
-    .date {
-      position: absolute;
-      z-index: 2;
-      top: 170px;
-      left: 0;
-    }
   }
-  button {
+  .searchBtn {
     padding: 0.625rem;
     background-color: $secondary-color;
     color: $white-color;

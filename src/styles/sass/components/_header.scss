@@ -102,16 +102,6 @@
           font-size: 0.9rem;
           cursor: pointer;
         }
-
-        .date {
-          position: absolute;
-          z-index: 2;
-          top: 55px;
-          transform: translateX(-50%);
-          left: 50%;
-          @media (min-width: $tablet) {
-          }
-        }
       }
     }
 

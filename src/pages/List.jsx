@@ -3,18 +3,22 @@ import React, { useState } from "react";
 
 import { useLocation } from "react-router-dom";
 import ListSearch from "components/ListSearch";
-import ListResults from "components/ListResults";
+import SearchItem from "components/SearchItem";
+import useFetch from "hooks/useFetch";
 const List = () => {
   const location = useLocation();
   const [filterState, setFilterState] = useState({
     destination: location.state.destination,
     options: location.state.options,
-    date: location.state.date,
+    dates: location.state.dates,
+    minPrice: 0,
+    maxPrice: 9999,
   });
-  console.log(location);
-  /** */
-
-  /**/
+  const { data, loading, error, reFetch } = useFetch(
+    `/hotels?city=${filterState.destination}&min=${
+      filterState.minPrice || 0
+    }&max=${filterState.maxPrice || 9999}`
+  );
   return (
     <div>
       <Header type={"list"} />
@@ -23,12 +27,16 @@ const List = () => {
           <ListSearch
             filterState={filterState}
             setFilterState={setFilterState}
+            reFetch={reFetch}
           />
           <div className="results">
-            <ListResults />
-            <ListResults />
-            <ListResults />
-            <ListResults />
+            {loading
+              ? "loading..."
+              : data?.map((searchItem) => {
+                  return (
+                    <SearchItem searchItem={searchItem} key={searchItem._id} />
+                  );
+                })}
           </div>
         </div>
       </div>

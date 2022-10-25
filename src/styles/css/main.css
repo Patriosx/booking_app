@@ -62,6 +62,11 @@ body ol {
   display: flex;
   gap: 1rem;
 }
+@media (max-width: 960px) {
+  .listContainer .listWrapper {
+    flex-wrap: wrap;
+  }
+}
 .listContainer .listWrapper .results {
   display: flex;
   flex-direction: column;
@@ -323,13 +328,6 @@ body ol {
   font-size: 0.9rem;
   cursor: pointer;
 }
-.header .headerContainer .headerSearch .headerSearchItem .date {
-  position: absolute;
-  z-index: 2;
-  top: 55px;
-  transform: translateX(-50%);
-  left: 50%;
-}
 .header .headerContainer .options {
   z-index: 2;
   position: absolute;
@@ -453,11 +451,10 @@ body ol {
 .featuredProperty {
   width: 100%;
   display: flex;
-  justify-content: space-between;
   gap: 1.25rem;
   flex-direction: column;
   max-width: 360px;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
 }
 @media (min-width: 960px) {
@@ -470,11 +467,14 @@ body ol {
   }
 }
 .featuredProperty .featuredPropertyItem {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  min-width: 300px;
-  max-width: 350px;
+  align-self: center;
+}
+@media (min-width: 960px) {
+  .featuredProperty .featuredPropertyItem {
+    max-width: 280px;
+  }
 }
 .featuredProperty .featuredPropertyItem img {
   width: 100%;
@@ -487,9 +487,10 @@ body ol {
 }
 .featuredProperty .featuredPropertyItem .featuredPropertyCity {
   font-weight: 300;
+  text-transform: capitalize;
 }
 .featuredProperty .featuredPropertyItem .featuredPropertyPrice {
-  font-weight: 500;
+  font-weight: 600;
 }
 .featuredProperty .featuredPropertyItem .featuredPropertyRating button {
   background-color: #003580;
@@ -582,11 +583,6 @@ body ol {
   height: max-content;
   min-width: 235px;
 }
-@media (max-width: 960px) {
-  .listSearch {
-    display: none;
-  }
-}
 .listSearch .listSearchTitle {
   font-size: 1.2rem;
 }
@@ -596,19 +592,30 @@ body ol {
   gap: 5px;
   margin-bottom: 0.625rem;
 }
-.listSearch .listItem > input {
-  padding: 5px;
-  border: none;
-  color: #333;
-}
 .listSearch .listItem .listSearchText {
   font-size: 0.875rem;
   font-weight: 500;
 }
-.listSearch .listItem .searchDestination {
+.listSearch .listItem .destinationContainer {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+.listSearch .listItem .destinationContainer > input {
+  border: none;
+  color: #333;
+  width: 100%;
+  margin-left: 0.4rem;
+}
+.listSearch .listItem .dateContainer {
   padding: 5px;
   background-color: white;
   color: #333;
+}
+.listSearch .listItem .dateContainer .searchDestination {
+  font-size: 0.9rem;
+  margin-left: 0.4rem;
 }
 .listSearch .listItem .listFilters {
   width: 100%;
@@ -624,13 +631,7 @@ body ol {
   text-align: center;
   padding: 2px;
 }
-.listSearch .listItem .date {
-  position: absolute;
-  z-index: 2;
-  top: 170px;
-  left: 0;
-}
-.listSearch button {
+.listSearch .searchBtn {
   padding: 0.625rem;
   background-color: #0071c2;
   color: #f8f9fa;
@@ -651,8 +652,13 @@ body ol {
   flex-wrap: wrap;
 }
 .listResult .searchItem .searchItemImg {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+@media (min-width: 500px) {
+  .listResult .searchItem .searchItemImg {
+    width: 200px;
+  }
 }
 .listResult .searchItemDesc {
   flex: 2;
@@ -695,6 +701,7 @@ body ol {
 }
 .listResult .searchItemDetails .searchItemRating span {
   font-weight: 600;
+  margin-right: 0.5rem;
 }
 .listResult .searchItemDetails .searchItemRating button {
   background-color: #003580;
@@ -729,6 +736,7 @@ body ol {
   border: none;
   font-weight: 500;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .slider {
@@ -765,4 +773,19 @@ body ol {
   font-size: 45px;
   color: lightgray;
   cursor: pointer;
+}
+
+.listItem .date {
+  position: absolute;
+  z-index: 2;
+  top: 170px;
+  left: 0;
+}
+
+.headerSearchItem .date {
+  position: absolute;
+  z-index: 2;
+  top: 55px;
+  transform: translateX(-50%);
+  left: 50%;
 }/*# sourceMappingURL=main.css.map */

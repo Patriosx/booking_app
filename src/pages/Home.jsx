@@ -1,8 +1,7 @@
 import Featured from "components/Featured";
 import FeaturedProperties from "components/FeaturedProperties";
-import Footer from "components/Footer";
+
 import Header from "components/Header";
-import Newsletter from "components/Newsletter";
 import PropertyList from "components/PropertyList";
 
 const Home = () => {
