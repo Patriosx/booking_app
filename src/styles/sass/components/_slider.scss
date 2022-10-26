@@ -4,7 +4,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.613);
+  background-color: $modal-bgc;
   z-index: 999;
   display: flex;
   align-items: center;
@@ -27,14 +27,14 @@
     top: 20px;
     right: 20px;
     font-size: 30px;
-    color: lightgray;
+    color: $white-color;
     cursor: pointer;
   }
 
   .arrow {
     margin: 20px;
     font-size: 45px;
-    color: lightgray;
+    color: $white-color;
     cursor: pointer;
   }
 }

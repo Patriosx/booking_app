@@ -29,7 +29,7 @@
       font-weight: 500;
     }
     .destinationContainer {
-      background-color: white;
+      background-color: $white-color;
       display: flex;
       align-items: center;
       padding: 5px;
@@ -43,7 +43,7 @@
     //date
     .dateContainer {
       padding: 5px;
-      background-color: white;
+      background-color: $white-color;
       color: $text-color;
       .searchDestination {
         font-size: 0.9rem;

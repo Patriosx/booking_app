@@ -10,8 +10,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons"; // ES Module "as" syntax
 import { SearchContext } from "../context/SearchContext";
 import { formatDate } from "utils/helpers";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const ListSearch = ({ filterState, setFilterState, reFetch }) => {
+  const navigate = useNavigate();
   const [openDate, setOpenDate] = useState(false);
   const { newSearchHotels } = useContext(SearchContext);
 
@@ -22,7 +25,6 @@ const ListSearch = ({ filterState, setFilterState, reFetch }) => {
   const handleOpenDate = (e) => {
     setOpenDate(!openDate);
   };
-
   const handleInputChange = (e) => {
     //handle min and max prices
     setFilterState({ ...filterState, [e.target.name]: e.target.value });
@@ -36,10 +38,14 @@ const ListSearch = ({ filterState, setFilterState, reFetch }) => {
       ...filterState,
       options: {
         ...filterState.options,
-        [e.target.name]: parseInt(e.target.value),
+        [e.target.name]: e.target.value,
       },
     });
   };
+  //if the user refresh the page
+  useEffect(() => {
+    if (!filterState.dates) navigate("/");
+  }, []);
   return (
     <div className="listSearch">
       <h1 className="listSearchTitle">Buscar</h1>
@@ -64,7 +70,7 @@ const ListSearch = ({ filterState, setFilterState, reFetch }) => {
         <div className="dateContainer" onClick={handleOpenDate}>
           <FontAwesomeIcon icon={faCalendarDay} />
           <span className="listFilter searchDestination">
-            {formatDate(filterState.dates)}
+            {filterState.dates && formatDate(filterState.dates)}
           </span>
         </div>
         {openDate && (

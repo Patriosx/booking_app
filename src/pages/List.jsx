@@ -5,12 +5,13 @@ import { useLocation } from "react-router-dom";
 import ListSearch from "components/ListSearch";
 import SearchItem from "components/SearchItem";
 import useFetch from "hooks/useFetch";
+
 const List = () => {
   const location = useLocation();
   const [filterState, setFilterState] = useState({
-    destination: location.state.destination,
-    options: location.state.options,
-    dates: location.state.dates,
+    destination: location.state ? location.state.destination : "",
+    options: location.state ? location.state.options : "",
+    dates: location.state ? location.state.dates : "",
     minPrice: 0,
     maxPrice: 9999,
   });

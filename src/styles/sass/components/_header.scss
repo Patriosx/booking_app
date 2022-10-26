@@ -95,6 +95,10 @@
           border: none;
           outline: none;
           background-color: $white-color;
+          &:focus {
+            background-color: white;
+            // border: 2px solid black;
+          }
         }
 
         .headerSearchText {

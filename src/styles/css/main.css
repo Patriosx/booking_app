@@ -323,6 +323,9 @@ body ol {
   outline: none;
   background-color: #f8f9fa;
 }
+.header .headerContainer .headerSearch .headerSearchItem .headerSearchInput:focus {
+  background-color: white;
+}
 .header .headerContainer .headerSearch .headerSearchItem .headerSearchText {
   color: #333;
   font-size: 0.9rem;
@@ -597,7 +600,7 @@ body ol {
   font-weight: 500;
 }
 .listSearch .listItem .destinationContainer {
-  background-color: white;
+  background-color: #f8f9fa;
   display: flex;
   align-items: center;
   padding: 5px;
@@ -610,7 +613,7 @@ body ol {
 }
 .listSearch .listItem .dateContainer {
   padding: 5px;
-  background-color: white;
+  background-color: #f8f9fa;
   color: #333;
 }
 .listSearch .listItem .dateContainer .searchDestination {
@@ -745,7 +748,7 @@ body ol {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.613);
+  background-color: rgba(0, 0, 0, 0.6117647059);
   z-index: 999;
   display: flex;
   align-items: center;
@@ -765,13 +768,13 @@ body ol {
   top: 20px;
   right: 20px;
   font-size: 30px;
-  color: lightgray;
+  color: #f8f9fa;
   cursor: pointer;
 }
 .slider .arrow {
   margin: 20px;
   font-size: 45px;
-  color: lightgray;
+  color: #f8f9fa;
   cursor: pointer;
 }
 
@@ -788,4 +791,68 @@ body ol {
   top: 55px;
   transform: translateX(-50%);
   left: 50%;
+}
+
+.reserve {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6117647059);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reserve .reserveContainer {
+  background-color: #f8f9fa;
+  width: fit-content;
+  height: fit-content;
+  padding: 1rem;
+  position: relative;
+}
+.reserve .reserveContainer .closeReserveIcon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.reserve .reserveContainer .reserveItem {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+}
+.reserve .reserveContainer .reserveItem .reserveItemInfo .reserveTitle {
+  text-transform: capitalize;
+  font-weight: 500;
+}
+.reserve .reserveContainer .reserveItem .reserveItemInfo .reserveDesc {
+  font-weight: 300;
+}
+.reserve .reserveContainer .reserveItem .reserveItemInfo .reserveMax {
+  font-size: 10px;
+}
+.reserve .reserveContainer .reserveItem .reserveItemInfo .reservePrice {
+  font-weight: 500;
+}
+.reserve .reserveContainer .reserveItem .reserveSelectRooms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  font-size: 0.5rem;
+  color: #bdbdbd;
+  max-width: 25%;
+}
+.reserve .reserveContainer .reserveItem .reserveSelectRooms .room {
+  display: flex;
+  flex-direction: column;
+}
+.reserve .reserveContainer .reserveBtn {
+  padding: 0.625rem;
+  background-color: #0071c2;
+  color: #f8f9fa;
+  width: 100%;
+  border: none;
+  font-weight: 500;
 }/*# sourceMappingURL=main.css.map */
