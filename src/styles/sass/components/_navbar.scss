@@ -2,7 +2,7 @@
   background-color: $primary-color;
   display: flex;
   justify-content: center;
-  padding: 1rem 10% 0;
+  padding: 1rem 10%;
 
   .navContainer {
     width: 100vw;
@@ -25,7 +25,7 @@
       color: $secondary-color;
       border: none;
       margin-left: 0.875rem;
-      padding: 0.3rem 0.625rem;
+      padding: 0.5rem 0.7rem;
       font-weight: 500;
       font-size: 0.875rem;
       cursor: pointer;

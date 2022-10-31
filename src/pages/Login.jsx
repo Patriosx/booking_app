@@ -1,11 +1,10 @@
-import axios from "axios";
 import { AuthContext } from "context/AuthContext";
 import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { user, loading, error, login } = useContext(AuthContext);
+  const { loading, error, login } = useContext(AuthContext);
   const [credentials, setCredentials] = useState({
     username: undefined,
     password: undefined,
@@ -16,26 +15,37 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     login(credentials);
+    navigate("/");
   };
   return (
     <div className="login">
       <div className="loginContainer">
+        <h2>
+          Inicia sesión o{" "}
+          <Link to={"/register"} className={"loginLink"}>
+            Regístrate
+          </Link>
+        </h2>
         <form action="" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="username"
-            id="username"
-            placeholder="email o username"
-            onChange={handleInputChange}
-          />
-          <input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="password"
-            onChange={handleInputChange}
-          />
-          <button disabled={loading}>Login</button>
+          <div className="inputContainer">
+            <label htmlFor="username">Email o usuario</label>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="inputContainer">
+            <label htmlFor="password">Contraseña</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              onChange={handleInputChange}
+            />
+          </div>
+          <button disabled={loading}>Iniciar Sesión</button>
           {error && <p>{error}</p>}
           {loading && <p>{"loading..."}</p>}
         </form>

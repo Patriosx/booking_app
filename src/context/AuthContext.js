@@ -21,7 +21,6 @@ const AuthContextProvider = ({ children }) => {
     try {
       const res = await axios.post("/auth/login", credentials);
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
-      // navigate("/");
     } catch (err) {
       dispatch({ type: "LOGIN_FAILURE", payload: err.response.data.message });
     }
@@ -29,6 +28,7 @@ const AuthContextProvider = ({ children }) => {
   const logout = () => {
     dispatch({ type: "LOGOUT" });
   };
+  const register = () => {};
   useEffect(() => {
     //when user changes we save in localstorage
     localStorage.setItem("user", JSON.stringify(state.user));
@@ -42,6 +42,7 @@ const AuthContextProvider = ({ children }) => {
         dispatch,
         login,
         logout,
+        register,
       }}
     >
       {children}

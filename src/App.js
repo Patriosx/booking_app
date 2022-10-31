@@ -5,6 +5,7 @@ import List from "pages/List";
 import Login from "pages/Login";
 import "styles/css/main.css";
 import Layout from "components/layout/Layout";
+import Register from "pages/Register";
 function App() {
   return (
     <BrowserRouter>
@@ -14,6 +15,7 @@ function App() {
           <Route path="/hotels" element={<List />} />
           <Route path="/hotels/:id" element={<Hotel />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </Layout>
     </BrowserRouter>
