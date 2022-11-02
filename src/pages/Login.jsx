@@ -15,14 +15,14 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     login(credentials);
-    navigate("/");
+    if (!error) navigate("/");
   };
   return (
-    <div className="login">
-      <div className="loginContainer">
+    <div className="auth">
+      <div className="authContainer">
         <h2>
           Inicia sesión o{" "}
-          <Link to={"/register"} className={"loginLink"}>
+          <Link to={"/register"} className={"authLink"}>
             Regístrate
           </Link>
         </h2>

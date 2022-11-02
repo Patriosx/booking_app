@@ -2,45 +2,18 @@ import axios from "axios";
 import { AuthContext } from "context/AuthContext";
 import React from "react";
 import { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const cloudname = "patrios";
 const Register = () => {
+  const navigate = useNavigate();
   const { register, loading, error } = useContext(AuthContext);
   const [userInfo, setUserInfo] = useState("");
   const [photo, setPhoto] = useState(null);
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    let newUser = {};
-    //upload img to cloudinary
-    if (photo) {
-      const data = new FormData();
-      data.append("file", photo);
-      data.append("upload_preset", "booking_users");
-      try {
-        const uploadResponse = await axios.post(
-          `https://api.cloudinary.com/v1_1/${cloudname}/image/upload`,
-          data
-        );
-        const { url } = uploadResponse.data;
 
-        newUser = {
-          ...userInfo,
-          img: url,
-        };
-        console.log("hay file", newUser);
-      } catch (error) {
-        console.log(error);
-      }
-    } else {
-      newUser = userInfo;
-      console.log("no hay file", newUser);
-    }
-    try {
-      //save to DB
-      await axios.post(`/auth/register`, newUser);
-    } catch (error) {
-      console.log(error);
-    }
+  const handleS = (e) => {
+    e.preventDefault();
+    register(userInfo);
+    if (!error) navigate("/login");
   };
   const handleInputChange = (e) => {
     setUserInfo({ ...userInfo, [e.target.id]: e.target.value });
@@ -48,19 +21,21 @@ const Register = () => {
   const handleLoadPhoto = (e) => {
     setPhoto(e.target.files[0]);
   };
+  //update user when a photo is selected
   useEffect(() => {
-    console.log(userInfo);
-  }, [userInfo]);
+    setUserInfo({ ...userInfo, photo });
+  }, [photo]);
+
   return (
-    <div className="login">
-      <div className="loginContainer">
+    <div className="auth">
+      <div className="authContainer">
         <h2>
-          <Link to={"/login"} className={"loginLink"}>
+          <Link to={"/login"} className={"authLink"}>
             Inicia sesión
           </Link>{" "}
           o Regístrate
         </h2>
-        <form action="" onSubmit={handleSubmit}>
+        <form action="" onSubmit={handleS}>
           <div className="inputContainer">
             <label htmlFor="username">Usuario</label>
             <input

@@ -4,19 +4,19 @@ export default (state, action) => {
   // type = la función que queremos ejecutar
   const { payload, type } = action;
   switch (type) {
-    case "LOGIN_START":
+    case "START":
       return {
         user: null,
         loading: true,
         error: null,
       };
-    case "LOGIN_SUCCESS":
+    case "SUCCESS":
       return {
         user: payload,
         loading: false,
         error: null,
       };
-    case "LOGIN_FAILURE":
+    case "FAILURE":
       return {
         user: null,
         loading: false,

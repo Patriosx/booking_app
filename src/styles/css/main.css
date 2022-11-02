@@ -190,52 +190,52 @@ body ol {
   border-radius: 5px;
 }
 
-.login {
+.auth {
   width: 100%;
   display: flex;
   margin: 4rem 0;
   justify-content: center;
   align-items: center;
 }
-.login .loginContainer h2 {
+.auth .authContainer h2 {
   margin-bottom: 1.2rem;
 }
-.login .loginContainer h2 .loginLink {
+.auth .authContainer h2 .authLink {
   color: #0071c2;
 }
-.login .loginContainer h2 .loginLink:hover {
+.auth .authContainer h2 .authLink:hover {
   text-decoration: underline;
 }
-.login .loginContainer .photo {
+.auth .authContainer .photo {
   display: flex;
   align-items: center;
 }
-.login .loginContainer .photo .left {
+.auth .authContainer .photo .left {
   width: 50px;
 }
-.login .loginContainer .photo .right input {
+.auth .authContainer .photo .right input {
   border: 0;
 }
-.login .loginContainer .inputContainer {
+.auth .authContainer .inputContainer {
   font-size: 0.875rem;
   display: flex;
   flex-direction: column;
   gap: 4px;
   margin-bottom: 0.5rem;
 }
-.login .loginContainer .inputContainer label {
+.auth .authContainer .inputContainer label {
   font-weight: 600;
 }
-.login .loginContainer .inputContainer input {
+.auth .authContainer .inputContainer input {
   padding: 5px;
   border-radius: 4px;
   border: 1px solid #333;
 }
-.login .loginContainer .inputContainer input:focus {
+.auth .authContainer .inputContainer input:focus {
   border: 1px solid transparent;
   outline: 2px solid #0071c2;
 }
-.login .loginContainer button {
+.auth .authContainer button {
   border: none;
   width: 100%;
   padding: 12px 20px;
@@ -245,7 +245,7 @@ body ol {
   cursor: pointer;
   border-radius: 5px;
 }
-.login .loginContainer button:hover {
+.auth .authContainer button:hover {
   background-color: #003580;
 }
 
